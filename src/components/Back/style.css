@@ -1,0 +1,28 @@
+.back {
+    display: flex;
+    margin-top: 60px;
+    margin-left: 30px;
+  
+  }
+  .textBack {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    align-items: center;
+    margin-left: 3px;
+    color: #8692A6;
+    cursor: pointer;
+    
+  }
+  .textBack:hover{
+    text-decoration: underline;
+  }
+  .icon{
+    font-size: 10px;
+    position: relative;
+    margin-top: 5px;
+    cursor: pointer;
+  }
