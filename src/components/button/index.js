@@ -5,16 +5,15 @@ class Button extends Component {
     render() {
         const { handleClick } = this.props
         return (
-            <div className="group-btn">
+            <div className="container-btn">
                 <button className="register-btn" onClick={handleClick}>
                     Register Account
                 </button>
                 <span className="or">Or</span>
-                {/* <OrText /> */}
                 <button className="google-btn">
                     <a href="http://www.google.com">
                         <svg
-                            className="svg-google"
+                            className="icon-google"
                             width="24"
                             height="24"
                             viewBox="0 0 24 24"

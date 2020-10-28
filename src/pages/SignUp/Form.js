@@ -24,7 +24,7 @@ class Form extends Component {
     render() {
         const { email, password, rePassword, checked } = this.state
         return (
-            <form className="contanier-form form-include">
+            <form className="contanier-form">
                 <Input
                     handleChange={this.handleChange}
                     name="email"
@@ -57,7 +57,7 @@ class Form extends Component {
                     handleChange={this.handleChange}
                     name="checked"
                     type="checkbox"
-                    labelTxt="I agree to terms & conditions"
+                    Text="I agree to terms & conditions"
                 />
 
                 <Button handleClick={this.handleClick} />

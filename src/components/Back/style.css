@@ -4,7 +4,7 @@
     margin-left: 30px;
   
   }
-  .textBack {
+  .word-back {
     font-family: "Inter";
     font-style: normal;
     font-weight: 600;
@@ -17,7 +17,7 @@
     cursor: pointer;
     
   }
-  .textBack:hover{
+  .word-back:hover{
     text-decoration: underline;
   }
   .icon{

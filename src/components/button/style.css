@@ -1,4 +1,4 @@
-.group-btn {
+.container-btn {
     display: flex;
     flex-direction: column;
   }
@@ -32,12 +32,11 @@
     line-height: 19px;
     display: flex;
     align-items: center;
-    padding-left: 2em;
-    
+    padding-left: 30px;
     cursor: pointer;
   }
-  .svg-google {
-    margin-right: 5em;
+  .icon-google {
+    margin-right: 75px;
   }
   .google-btn a{
     text-decoration: none;

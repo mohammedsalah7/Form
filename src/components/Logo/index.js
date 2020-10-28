@@ -24,7 +24,7 @@ function Logo() {
                     fill="white"
                 />
             </svg>
-            <h6 className="title-logo">Gamers</h6>
+            <h1 className="title-logo">Gamers</h1>
         </div>
     )
 }

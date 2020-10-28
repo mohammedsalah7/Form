@@ -7,7 +7,7 @@ function Back() {
     return (
         <div className="back">
             <FontAwesomeIcon className="icon" icon={faChevronLeft} />
-            <p className="textBack">Back</p>
+            <p className="word-back">Back</p>
         </div>
     )
 }

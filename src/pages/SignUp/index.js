@@ -1,10 +1,11 @@
 import React from 'react'
-import './style.css'
+
 import Form from './Form'
 import Logo from '../../components/Logo/index'
 import Back from '../../components/Back/index'
 import Quote from '../../components/Quote/index'
 
+import './style.css'
 function SingUp() {
     return (
         <div className="contanier">
@@ -14,9 +15,9 @@ function SingUp() {
             </aside>
             <section className="right-side">
                 <Back />
-                <div className="info-form">
+                <div className="text-form">
                     <h2>Register Individual Account!</h2>
-                    <p className="descraption">
+                    <p className="infromation">
                         For the purpose of gamers regulation, your details are
                         required.
                     </p>

@@ -1,9 +1,8 @@
 import React from 'react'
 import './style.css'
 function Quote() {
-    // const { className, type } = this.props;
     return (
-        <div className="para">
+        <div className="text-quote">
             <span>
                 <svg
                     width="26"
@@ -23,7 +22,7 @@ function Quote() {
                 escalator. I'll never see most of them again, so I imagine a lot
                 of things about their lives... about the day ahead of them.
             </p>
-            <p className="hideo">Hideo Kojima</p>
+            <p className="Author">Hideo Kojima</p>
             <span className="shap">
                 <svg
                     width="34"
