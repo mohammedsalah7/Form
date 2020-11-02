@@ -3,6 +3,7 @@ import Input from "../../Components/Input"
 import Checkbox from "../../Components/Checkbox"
 import { RegisterBtn, LogInBtn, OR } from "../../Components/Button"
 import "./style.css"
+import { Link } from "react-router-dom"
 class Form extends Component {
     state = {
         email: "",
@@ -71,8 +72,10 @@ class Form extends Component {
                     className="login-btn-signup"
                     handleClick={this.handleClick}
                 >
-                    {" "}
-                    Log In
+                    <Link to="/LogIn" className="link-page">
+                        {" "}
+                        Log In
+                    </Link>
                 </LogInBtn>
             </form>
         )

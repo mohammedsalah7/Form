@@ -4,6 +4,7 @@ import { RegisterBtn } from "../../Components/Button"
 import * as T from "../../Components/Typography"
 import image from "../../images/eye.png"
 import "./style.css"
+import { Link } from "react-router-dom"
 
 class Form extends Component {
     state = {
@@ -54,14 +55,14 @@ class Form extends Component {
                 <T.H1 className="new-accout">
                     {[
                         "Don’t have an account? ",
-                        <a
+                        <Link
+                            to="/SignUp"
                             className="link"
-                            href="#52"
                             name="SignUp"
                             onClick={this.props.handleClick}
                         >
                             Register
-                        </a>,
+                        </Link>,
                     ]}
                 </T.H1>
             </form>

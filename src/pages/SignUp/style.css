@@ -64,4 +64,7 @@
   font-weight: normal;
   margin-top: 10px;
   }
-  
+  .link-page{
+    text-decoration: none;
+    color: white;
+  }
