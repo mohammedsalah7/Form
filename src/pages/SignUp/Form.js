@@ -95,7 +95,7 @@ class Form extends Component {
                     Register
                 </RegisterBtn>
                 <OR className="or" />
-                <Link to="/LogIn" className="link-page">
+                <Link to="/" className="link-page">
                     <LogInBtn className="login-btn-signup"> Log In</LogInBtn>
                 </Link>
             </form>
