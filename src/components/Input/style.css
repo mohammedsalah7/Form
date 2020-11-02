@@ -27,3 +27,9 @@
   font-size: 16px;
   
   }
+  .error{
+    border-color: red;
+  } 
+  .lable-error{
+    color: red;
+  }

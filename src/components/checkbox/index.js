@@ -1,6 +1,6 @@
 import "./style.css"
 function Checkbox(props) {
-    const { checked, handleChange, name, type, Text } = props
+    const { checked, handleChange, name, type, Text, error } = props
     return (
         <form className="checkbox">
             <input
@@ -11,6 +11,7 @@ function Checkbox(props) {
                 id={name}
             />
             <label htmlFor={name}>{Text}</label>
+            {error && <div className="lable-error">{error}</div>}
         </form>
     )
 }
