@@ -1,19 +1,19 @@
-import React from 'react'
+import React from "react"
 
-import Form from './Form'
-import Logo from '../../components/Logo/index'
-import Back from '../../components/Back/index'
-import Quote from '../../components/Quote/index'
+import Form from "./Form"
+import Logo from "../../Components/Logo/index"
+import Back from "../../Components/Back/index"
+import { QuoteSignUp } from "../../Components/Quote/index"
 
-import './style.css'
+import "./style.css"
 function SingUp() {
     return (
         <div className="contanier">
-            <aside className="left-side">
-                <Logo size="small" />
-                <Quote type="fill" />
+            <aside className="left-sid">
+                <Logo size="small" className="signup" />
+                <QuoteSignUp type="fill" />
             </aside>
-            <section className="right-side">
+            <section className="right-sid">
                 <Back />
                 <div className="text-form">
                     <h2>Register Individual Account!</h2>

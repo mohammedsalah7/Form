@@ -1,8 +1,8 @@
-import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-import React from 'react'
-import './style.css'
+import React from "react"
+import "./style.css"
 function Back() {
     return (
         <div className="back">

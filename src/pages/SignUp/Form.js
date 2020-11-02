@@ -1,19 +1,19 @@
-import React, { Component } from 'react'
-import Input from '../../components/Input'
-import Checkbox from '../../components/checkbox'
-import Button from '../../components/button'
-import './style.css'
+import React, { Component } from "react"
+import Input from "../../Components/Input"
+import Checkbox from "../../Components/Checkbox"
+import { RegisterBtn, LogInBtn, OR } from "../../Components/Button"
+import "./style.css"
 class Form extends Component {
     state = {
-        email: '',
-        password: '',
-        rePassword: '',
-        checked: '',
+        email: "",
+        password: "",
+        rePassword: "",
+        checked: "",
     }
     handleChange = (e) => {
         const { value, name, checked } = e.target
         let _value = value
-        if (name === 'checked') {
+        if (name === "checked") {
             _value = checked
         }
         this.setState({ [name]: _value })
@@ -59,8 +59,21 @@ class Form extends Component {
                     type="checkbox"
                     Text="I agree to terms & conditions"
                 />
-
-                <Button handleClick={this.handleClick} />
+                <RegisterBtn
+                    className="register-btn-signup"
+                    handleClick={this.handleClick}
+                >
+                    {" "}
+                    Register
+                </RegisterBtn>
+                <OR className="or" />
+                <LogInBtn
+                    className="login-btn-signup"
+                    handleClick={this.handleClick}
+                >
+                    {" "}
+                    Log In
+                </LogInBtn>
             </form>
         )
     }

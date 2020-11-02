@@ -3,27 +3,20 @@
     flex-wrap: wrap;
    
 }
-.left-sid{
+.left-side{
     position: relative;
     width: 50%;
-    height: 618px;
-    background: 
-    linear-gradient(
-        rgba(5, 5, 230, 0.993), 
-        rgba(4, 20, 248, 0.582)
-        ),
-        url('../../images/photo1.png');
-        background-size: cover; 
-       
+    height: 620px;
+  
 }
-.right-sid{
+.right-side{
     margin: 0;
     width: 50%;
-    height: 620px;
-    
+    height: 620px;  
+  
 }
 
-.contanier-form{
+.content-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,7 +25,7 @@
     font-family: "Inter";
     margin-top: 3em;
   }
-  h2 {
+  .h2 {
     font-size: 30px;
     width: 415px;
     height: 36px;
@@ -43,17 +36,21 @@
     display: flex;
     align-items: center;
     color: #000000;
+    position: relative;
+    margin-top: 45px;
+    margin-left: 150px;
+    
   }
   
-  .text-form {
+   .text-form {
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow: hidden;
     position: relative;
-    
+     
   }
-  .infromation {
+  .information {
     width: 400px;
     height: 56px;
     font-family: "Inter";
@@ -63,5 +60,27 @@
     font-style: normal;
   font-weight: normal;
   margin-top: 10px;
+  margin-left: 50px;
   }
   
+  .img{
+    position: relative;
+    width: 180px;
+    height: 260px;
+    left: 390px;
+    top: 90px;
+  }
+  .link{
+    
+    color: blue;
+    text-decoration: none;
+
+  }
+  .img-eye{
+    position: relative;
+   top: 78px;
+    left: 390px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+  }

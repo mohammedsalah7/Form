@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import './style.css'
+import React, { Component } from "react"
+import "./style.css"
 class Checkbox extends Component {
     render() {
         const { checked, handleChange, name, type, Text } = this.props

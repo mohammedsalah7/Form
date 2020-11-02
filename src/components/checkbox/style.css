@@ -1,9 +1,9 @@
 .checkbox label {
+  position: relative;
     width: 220px;
     height: 19px;
-    left: 827px;
-    top: 698px;
-    margin-left: 1.5em;
+    left: -95px;
+    margin-left: 10px;
     font-family: "Inter";
     font-style: normal;
     font-weight: 500;
@@ -13,5 +13,8 @@
     color: #696F79;
   }
   .checkbox input{
+    position: relative;
+    left: -100px;
     cursor: pointer;
   }
+  

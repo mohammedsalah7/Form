@@ -1,18 +1,21 @@
-.container{
+.Logo{
     display: flex;
     flex-wrap: wrap;
     position: absolute;
     left: 79px;
     top:51px;
 }
-.title-logo-signup{
+.title-logo{
     position: absolute;
-    left: 120px;
+    left: 40px;
     top:15px;
-    color:white;
-    font-size: 20px;
+    color: #1565D8;
+    font-size: 36px;
     line-height: 16px;
     font-family: Raanana;
     font-style: normal;
     font-weight: normal;
+}
+.logo{
+    color: #1565D8;
 }

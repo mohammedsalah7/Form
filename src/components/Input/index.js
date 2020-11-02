@@ -1,5 +1,5 @@
-import React from 'react'
-import './style.css'
+import React from "react"
+import "./style.css"
 function Input(props) {
     const { handleChange, name, type, value, label, placeholder } = props
 
