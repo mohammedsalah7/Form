@@ -19,10 +19,6 @@
     margin-left: 3px;
     color: #8692A6;
     cursor: pointer;   
-     text-decoration: none;
-
-    
-    
   }
 
   .icon{
@@ -30,6 +26,8 @@
     position: relative;
     margin-top: 5px;
     cursor: pointer;
+    color: #8692A6;
+  }
+  .link-back{
     text-decoration: none;
-
   }

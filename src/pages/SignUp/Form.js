@@ -26,8 +26,10 @@ class Form extends Component {
         const { email, password, rePassword, checked } = this.state
         const SignUpSchema = yup.object().shape({
             email: yup.string().email().required(),
-            password: yup.string().required(),
-            rePassword: yup.string().required(),
+            password: yup.string().required().min(9),
+            rePassword: yup
+                .string()
+                .oneOf([yup.ref("password"), null], "Passwords must match"),
             checked: yup.boolean().typeError("You must check").required(),
         })
         SignUpSchema.validate(

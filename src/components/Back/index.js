@@ -7,7 +7,7 @@ import "./style.css"
 function Back() {
     return (
         <div className="back">
-            <Link to="/LogIn">
+            <Link to="/LogIn" className="link-back">
                 <FontAwesomeIcon className="icon" icon={faChevronLeft} />
                 <p className="word-back">Back</p>
             </Link>
