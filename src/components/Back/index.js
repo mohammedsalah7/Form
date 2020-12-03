@@ -1,17 +1,20 @@
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-
+import { withRouter } from "react-router-dom"
 import React from "react"
-import { Link } from "react-router-dom"
+
 import "./style.css"
-function Back() {
+function Back(props) {
     return (
         <div className="back">
-            <Link to="/LogIn" className="link-back">
+            <button
+                className="link-back"
+                onClick={() => props.history.goBack()}
+            >
                 <FontAwesomeIcon className="icon" icon={faChevronLeft} />
                 <p className="word-back">Back</p>
-            </Link>
+            </button>
         </div>
     )
 }
-export default Back
+export default withRouter(Back)
