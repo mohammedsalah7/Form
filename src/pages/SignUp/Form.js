@@ -3,7 +3,9 @@ import Input from "../../Components/Input"
 import Checkbox from "../../Components/Checkbox"
 import { RegisterBtn, LogInBtn, OR } from "../../Components/Button"
 import { Link } from "react-router-dom"
-import * as yup from "yup"
+import contactUsSchema, { fieldSchema } from "./signup_validate"
+import axios from "axios"
+// import * as yup from "yup"
 import "./style.css"
 class Form extends Component {
     state = {
@@ -11,7 +13,13 @@ class Form extends Component {
         password: "",
         rePassword: "",
         checked: "",
-        errors: {},
+        errors: {
+            email: "",
+            password: "",
+            rePassword: "",
+            checked: "",
+        },
+        error: "",
     }
     handleChange = (e) => {
         const { value, name, checked } = e.target
@@ -19,40 +27,84 @@ class Form extends Component {
         if (name === "checked") {
             _value = checked
         }
-        this.setState({ [name]: _value })
+        const validate = () => {
+            const { password } = this.state
+            fieldSchema(name, password)
+                .validate(_value)
+                .then((data) => {
+                    console.log(data)
+
+                    console.log("valid")
+                    this.setState((prevState) => {
+                        const { errors } = prevState
+                        return { errors: { ...errors, [name]: "" } }
+                    })
+                })
+                .catch((err) => {
+                    console.log("in valid")
+                    this.setState((prevState) => {
+                        const { errors } = prevState
+                        return { errors: { ...errors, [name]: err.message } }
+                    })
+                })
+        }
+
+        this.setState({ [name]: _value }, validate)
     }
-    handleSubmit = (e) => {
-        e.preventDefault()
-        const { email, password, rePassword, checked } = this.state
-        const SignUpSchema = yup.object().shape({
-            email: yup.string().email().required(),
-            password: yup.string().required().min(9),
-            rePassword: yup
-                .string()
-                .oneOf([yup.ref("password"), null], "Passwords must match"),
-            checked: yup.boolean().typeError("You must check").required(),
-        })
-        SignUpSchema.validate(
-            { email, password, rePassword, checked },
-            { abortEarly: false }
-        )
+
+    validateFrom = (data) => {
+        contactUsSchema
+            .validate(data, { abortEarly: false })
             .then((data) => {
                 console.log("valid")
                 console.log(data)
+                this.setState({ error: "" })
             })
             .catch((err) => {
                 console.log("Invalid")
-
                 console.log(err)
                 const errors = {}
                 err.inner.forEach(({ message, params }) => {
                     errors[params.path] = message
                 })
-                this.setState({ errors })
+                this.setState({ errors, error: "Check the fields above" })
             })
     }
+    handleSubmit = (e) => {
+        e.preventDefault()
+        const { email, password, rePassword, checked, error } = this.state
+        this.validateFrom({ email, password, rePassword, checked })
+        if (!error) {
+            axios
+                .post("https://fake-api-ahmed.herokuapp.com/v1/auth/signup", {
+                    email,
+                    password,
+                })
+                .then((res) => {
+                    const user = res.data
+                    console.log(user)
+                    // this.props.handleLogin()
+                })
+                .catch((err) => {
+                    console.log(err.response.data.error)
+                    let error = err.response.data.error
+                    if (error.includes("duplicate")) {
+                        error = "Email already exists"
+                    }
+                    this.setState({ error })
+                })
+        }
+    }
+
     render() {
-        const { email, password, rePassword, checked, errors } = this.state
+        const {
+            email,
+            password,
+            rePassword,
+            checked,
+            errors,
+            error,
+        } = this.state
         return (
             <form className="contanier-form" onSubmit={this.handleSubmit}>
                 <Input
@@ -86,16 +138,18 @@ class Form extends Component {
                     error={errors.rePassword}
                 />
                 <Checkbox
-                    checked={checked}
                     handleChange={this.handleChange}
                     name="checked"
                     type="checkbox"
                     Text="I agree to terms & conditions"
                     error={errors.checked}
+                    checked={checked}
                 />
+                {error && <span>{error}</span>}
                 <RegisterBtn className="register-btn-signup">
                     Register
                 </RegisterBtn>
+
                 <OR className="or" />
                 <Link to="/" className="link-page">
                     <LogInBtn className="login-btn-signup"> Log In</LogInBtn>

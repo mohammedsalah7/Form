@@ -16,7 +16,11 @@ function Input(props) {
                 onChange={handleChange}
                 placeholder={placeholder}
             />
-            {error && <div className="lable-error">{error}</div>}
+            {error && (
+                <div htmlFor={name} className="lable-error">
+                    {error}
+                </div>
+            )}
         </div>
     )
 }
