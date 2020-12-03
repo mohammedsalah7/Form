@@ -131,7 +131,7 @@ class Form extends Component {
                     handleChange={this.handleChange}
                     name="rePassword"
                     type="password"
-                    placeholder="Repeat password"
+                    placeholder="Repeat password 11222"
                     value={rePassword}
                     label="Repeat password"
                     id="rePassword"
